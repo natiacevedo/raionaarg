@@ -49,56 +49,56 @@ const productos = {
       "img/black3.jpg",
       "img/black4.jpg",
       "img/black5.jpg" ] 
-    }, 
+  }, 
     
-    colgantegrey: { 
-      id: "colgantegrey",
-      titulo: "Box Colgante Simple",
-      caracteristicas: [ 
-        "Cerradura con triple punto de anclaje.",
-        "Posibilidad de poner candado.",
-        "Brazos hidráulicos para facilitar su apertura.",
-        "Capacidad de 200 kg de carga.",
-        "Ignífugo.",
-        "Resistencia contra la oxidación y corrosión." ],
-      material: "Acero galvanizado calibre 20 con un acabado de pintura electroestática color gris claro.", 
-      dimensiones: [ 
-        "Largo: 1.75m", 
-        "Alto: 1.00m", 
-        "Profundidad: 0.90m" ],
-      imagen: "img/colgantegrey.jpg",
-      imagenes: [ 
-        "img/colgantegrey copia.jpg", 
-        "img/grey1.png", 
-        "img/grey2.jpg", 
-        "img/grey3.jpg" ] 
-      },
+  colgantegrey: { 
+    id: "colgantegrey",
+    titulo: "Box Colgante Simple",
+    caracteristicas: [ 
+      "Cerradura con triple punto de anclaje.",
+      "Posibilidad de poner candado.",
+      "Brazos hidráulicos para facilitar su apertura.",
+      "Capacidad de 200 kg de carga.",
+      "Ignífugo.",
+      "Resistencia contra la oxidación y corrosión." ],
+    material: "Acero galvanizado calibre 20 con un acabado de pintura electroestática color gris claro.", 
+    dimensiones: [ 
+      "Largo: 1.75m", 
+      "Alto: 1.00m", 
+      "Profundidad: 0.90m" ],
+    imagen: "img/colgantegrey.jpg",
+    imagenes: [ 
+      "img/colgantegrey copia.jpg", 
+      "img/grey1.png", 
+      "img/grey2.jpg", 
+      "img/grey3.jpg" ] 
+  },
     
-    doble: {
-        id: "doble",
-        titulo: "Box Doble",
-        caracteristicas: [ 
-          "Cerradura con triple punto de anclaje en parte superior. Cerradura con doble anclaje en parte inferior.", 
-          "Sostenido por su propia estructura sin necesidad de amurarse", 
-          "Brazos hidráulicos para facilitar su apertura en la parte superior y dos puertas batientes en la inferior.", 
-          "Capacidad superior a los 3.700 litros.", 
-          "Ignífugo.", 
-          "Resistencia contra la oxidación y corrosión.", 
-          "Resistencia de carga de 500kg." 
-        ], 
-        material: "Acero galvanizado calibre 20 (cuerpo del Box) y 14 (soportes y estructura) con un acabado de pintura electrostática color gris claro.", 
-        dimensiones: [ 
-          "Largo: 2.10m", 
-          "Alto: 2.10m", 
-          "Profundidad: 0.90m" ], 
-        imagen: "img/doble.jpg", 
-        imagenes: [ 
-          "img/doble copia.jpg", 
-          "img/doble1.jpg", 
-          "img/doble2.jpg", 
-          "img/doble3.jpg" 
-        ] 
-      }
+  doble: {
+    id: "doble",
+    titulo: "Box Doble",
+    caracteristicas: [ 
+      "Cerradura con triple punto de anclaje en parte superior. Cerradura con doble anclaje en parte inferior.", 
+      "Sostenido por su propia estructura sin necesidad de amurarse", 
+      "Brazos hidráulicos para facilitar su apertura en la parte superior y dos puertas batientes en la inferior.", 
+      "Capacidad superior a los 3.700 litros.", 
+      "Ignífugo.", 
+      "Resistencia contra la oxidación y corrosión.", 
+      "Resistencia de carga de 500kg." 
+    ], 
+    material: "Acero galvanizado calibre 20 (cuerpo del Box) y 14 (soportes y estructura) con un acabado de pintura electroestática color gris claro.", 
+    dimensiones: [ 
+      "Largo: 2.10m", 
+      "Alto: 2.10m", 
+      "Profundidad: 0.90m" ], 
+    imagen: "img/doble.jpg", 
+    imagenes: [ 
+      "img/doble copia.jpg", 
+      "img/doble1.jpg", 
+      "img/doble2.jpg", 
+      "img/doble3.jpg" 
+    ] 
+  }
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -110,10 +110,12 @@ const p = productos[id];
 if (p) {
   document.title = "Raiona | " + p.titulo;
 
-const mailSubject = encodeURIComponent(`Consulta de precio - ${p.titulo}`);
-const mailBody = encodeURIComponent(`Hola,
-Quisiera recibir información y precio del siguiente producto: ${p.titulo}
-Gracias.`);
+  // Crear asunto y cuerpo del mail
+  const mailSubject = `Consulta de precio - ${p.titulo}`;
+  const mailBody = `Hola,
+Quisiera consultar información y precio del siguiente producto:
+${p.titulo}
+Gracias.`;
 
   contenedor.innerHTML = `
     <a href="index.html#catalogo" class="colorN text-decoration-none volver">< Volver al catálogo</a>
@@ -147,22 +149,29 @@ Gracias.`);
 
     <p class="text-center">Conseguí tu propio Box para toda la vida, sin necesidad de mantenimiento y <b>con garantía por 5 años</b>.</p>
 
-    <!-- BOTÓN CONSULTAR PRECIO -->
-    <div class="text-center my-4">
-      <a
-        href="mailto:raionaarg@gmail.com?subject=Consulta%20de%20precio%20-%20${encodeURIComponent(p.titulo)}&body=${encodeURIComponent(`Hola,
-        Quisiera recibir información y precio del siguiente producto: ${p.titulo}
-        Gracias.`)}"
-        class="button2 text-decoration-none">
-        Consultar precio
-      </a>
-    </div>
+    <div id="botonConsulta" class="text-center my-4"></div>
 
     <p class="text-center">*El envío e instalación se cotiza según zona.</p>
-
   `;
 
-  // Carrusel igual que antes
+  // Crear botón según plataforma
+  const botonContainer = document.getElementById("botonConsulta");
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  const btn = document.createElement("a");
+  btn.className = "button2 text-decoration-none";
+  btn.textContent = "Consultar precio";
+
+  if (isMobile) {
+    btn.href = `mailto:raionaarg@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+  } else {
+    btn.href = `https://mail.google.com/mail/?view=cm&fs=1&to=raionaarg@gmail.com&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+    btn.target = "_blank";
+  }
+
+  botonContainer.appendChild(btn);
+
+  // Carrusel
   const carrusel = document.getElementById("carrusel");
   if (p.imagenes && p.imagenes.length > 0) {
     let index = 0;
@@ -235,7 +244,7 @@ Gracias.`);
   contenedor.innerHTML = `<p class="text-center">Producto no encontrado 😕</p>`;
 }
 
-// Otros productos sin precios
+// Otros productos
 function mostrarOtrosProductos(productoActualId) {
   const contenedorOtros = document.getElementById("otrosProductos");
   contenedorOtros.innerHTML = "";
