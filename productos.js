@@ -150,8 +150,9 @@ Gracias.`);
     <!-- BOTÓN CONSULTAR PRECIO -->
     <div class="text-center my-4">
       <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=raionaarg@gmail.com&su=${mailSubject}&body=${mailBody}"
-        target="_blank"
+        href="mailto:raionaarg@gmail.com?subject=Consulta%20de%20precio%20-%20${encodeURIComponent(p.titulo)}&body=${encodeURIComponent(`Hola,
+        Quisiera recibir información y precio del siguiente producto: ${p.titulo}
+        Gracias.`)}"
         class="button2 text-decoration-none">
         Consultar precio
       </a>
