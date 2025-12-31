@@ -14,7 +14,7 @@ const productos = {
     ],
     material: "Acero galvanizado calibre 20 (cuerpo del box) y 14 (soportes verticales) con un acabado de pintura electroestática color gris claro.",
     dimensiones: [
-      "Largo: 2.40m",
+      "Largo: 2.20m / 2.40m",
       "Alto: 1.00m",
       "Profundidad: 1.10m",
       "Soportes regulables: entre 1.00m y 1.50m"
@@ -36,9 +36,10 @@ const productos = {
       "Posibilidad de amurarse a la pared o apoyarse sobre el suelo.",
       "Capacidad de 150 kg. de carga.", "Ignífugo.",
       "Resistencia contra la oxidación y corrosión." ],
-    material: "Acero galvanizado calibre 24 con un acabado de pintura electroestática color negro mate.",
+    material: "Acero galvanizado calibre 24 con un acabado de pintura electroestática color gris claro.",
     dimensiones: [
-      "Largo: 2.00m", "Alto: 1.00m",
+      "Largo: 2.00m", 
+      "Alto: 1.00m",
       "Profundidad: 0.55m" ],
     imagen: "img/colganteblack.jpg",
     imagenes: [

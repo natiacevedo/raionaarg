@@ -674,8 +674,8 @@ footer a {
     footer .d-flex {
         flex-direction: column !important;
         justify-content: center !important;
-        text-align: center;
-        gap: 1rem;
+        text-align: center;/* 
+        gap: 1rem; */
     }
 
     footer .navbar-brand img {
