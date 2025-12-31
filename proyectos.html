@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raiona | Proyectos</title>
+
+    <meta name="description" content="Conocé algunos de los proyectos de boxes metálicos que realizamos para nuestros clientes.">
+    <meta name="author" content="Raiona">
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <meta property="og:title" content="Raiona | Bauleras metálicas">
+    <meta property="og:description" content="Conocé algunos de los proyectos de boxes metálicos que realizamos para nuestros clientes.">
+    <meta property="og:image" content="https://raiona.netlify.app/img/peugeot.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://raiona.netlify.app/proyectos.html">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="sticky-top fondo">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+            
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/raiona.png" alt="Logo Raiona" width="120">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="menuNav">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="links nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="links nav-link" href="index.html#catalogo">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="links nav-link" href="proyectos.html">Proyectos</a>
+                        </li><!-- 
+                        <li class="nav-item">
+                            <a class="links nav-link" href="quienessomos.html">Quiénes somos</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="links nav-link" href="index.html#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <a href="https://wa.me/5492364416831?text=Hola!%20Quiero%20más%20información" class="whatsapp-float text-decoration-none" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <main id="proyectos">
+        <section class="container py-5">
+            <div class="proy-text">
+                <h2 class="text-center">Proyectos</h2>
+                <p class="text-center">Nos comprometemos a formar parte de cada proyecto trabajando en conjunto con el cliente para generar valor agregado a cada unidad.</p>
+                <p class="text-center">Sabemos que cada plan arquitectónico es diferente y único, por este motivo nos adaptamos a cada solicitud para dar la solución más inteligente y económica.</p>
+                <p class="text-center mb-4"><b>Ofrecemos un servicio integral:</b> Asesoramiento sin cargo, relevamiento del lugar, coordinación, envío, instalación y post venta.</p>
+            </div>
+<!--             <p class="text-center mb-4">Algunos de los proyectos realizados para clientes que confiaron en nosotros para optimizar el espacio y la funcionalidad de sus garajes.</p>
+ -->            <div id="proyectosContainer" class="cards-container"></div>
+    
+            <!-- MODAL -->
+            <div id="modalProyecto" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <p class="modal-label mb-2">Proyecto:</p>
+                    <h2 id="modalTitulo"></h2>
+                    <p class="modal-label" id="modalDepto"></p>
+                    <p id="modalDescripcion"></p>
+    
+                    <!-- Carrusel simple -->
+                    <div id="modalImagenes" class="carousel"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center py-4">
+            <div class="d-flex justify-content-between align-items-center">
+                
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/raiona.png" alt="Logo Raiona" width="120">
+                </a>
+
+                <!-- Íconos -->
+                <div class="footer-icons">
+                    <div class="mt-2">
+                        <a href="https://wa.me/5492364416831" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/raionaboxes/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/raionaboxes?locale=es_LA" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="smaller mt-2">raionaarg@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr>
+            <p class="smaller">Copyright © 2025. Desarrollado por <a href="https://nataliaacevedo.netlify.app/" target="_blank">Natalia Acevedo</a>.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="productos.js"></script>
+    <script src="proyectos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

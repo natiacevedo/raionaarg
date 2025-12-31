@@ -1,0 +1,697 @@
+:root {
+    --gris: #616161;
+    --gris-oscuro: #363636;
+    --naranja: #ff7a02;
+    --negro: #1a1a1a;
+    --blanco: #fbfbf9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+    section {
+        scroll-margin-top: 110px;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+    }
+}
+
+body {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    font-family: "Poppins", sans-serif;
+}
+
+h2 {
+    color: var(--naranja);
+    font-weight: bold;
+}
+
+.smaller {
+    font-size: 0.8rem;
+}
+
+hr {
+    border-color: var(--blanco);
+}
+
+.colorN {
+    color: var(--naranja);
+}
+
+/* Navbar */
+
+.fondo {
+    background-color: var(--negro);
+}
+
+.nav-link {
+    color: var(--blanco);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Banner */
+
+/* Banner */
+#banner {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* un poco más alto */
+  overflow: hidden;
+}
+
+.banner-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.ver-catalogo {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--naranja);
+  color: var(--blanco);
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.ver-catalogo:hover {
+  background-color: var(--gris);
+}
+
+.ver-catalogo:active {
+    background-color: var(--gris);
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+    .banner-video {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 120%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 55% center; /* mueve el video hacia la derecha */
+    }
+}
+
+/* Características */
+
+@media (max-width: 768px) {
+    .sintexto p {
+        display: none;
+    }
+}
+
+/* WhatsApp */
+
+.whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5d;
+}
+
+.whatsapp-float i {
+  margin: 0;
+}
+
+/* Productos */
+
+/* Asegurar que el zoom no se salga de la card */
+#catalogoCards .catalogo-item .card {
+    overflow: hidden; /* Contiene el zoom dentro de la card */
+    border-radius: 20px; /* Mantener bordes redondeados si los tenés */
+}
+
+/* Zoom en la imagen */
+#catalogoCards .catalogo-item .card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#catalogoCards .catalogo-item .card:hover img {
+    transform: scale(1.05); /* Zoom al pasar el mouse */
+    cursor: pointer; /* Indica clickeable */
+}
+
+
+.boton-filtro {
+  background-color: var(--gris);
+  border: var(--naranja) 1px solid;
+  color: var(--blanco);
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-filtro:hover, .boton-filtro.activo {
+  background-color: var(--naranja);
+  border: var(--gris) 1px solid;
+}
+
+.card {
+  border-radius: 20px;
+}
+
+.card-title {
+  color: var(--naranja);
+}
+
+.card img {
+  border-radius: 20px 20px 0 0;
+}
+
+/* Clientes */
+
+#clientes {
+  background-color: var(--blanco);
+  border-radius: 20px;
+}
+
+.logo-cliente {
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.logo-cliente:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.clientes-logos {
+  width: 70%;
+  margin: auto;
+}
+
+.clientes-logos div {
+  margin: auto;
+  padding: 20px;
+}
+
+.button2 {
+  background-color: var(--naranja);
+  border: var(--naranja) 1px solid;
+  color: var(--blanco);
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button22 {
+  display: inline-block;
+  width: auto;
+  border: var(--naranja) 1px solid;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button22 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.text-center > div > p {
+  margin-bottom: 6px !important;
+  margin-top: 0;
+}
+
+.negrita {
+  font-weight: bold;
+  color: var(--naranja);
+}
+
+.button2:hover {
+  background-color: var(--gris);
+  border: var(--naranja) 1px solid;
+}
+
+@media (max-width: 768px) {
+  .clientes-logos {
+    width: 100%;
+  }
+
+  .logo-cliente {
+    filter: none;
+    opacity: 1;
+  }
+
+  .logo-cliente:hover {
+    filter: none;
+    opacity: 1;
+  }
+
+  .logo-tienda {
+    content: url(img/logos/tiendaviajes.mobile.png);
+  }
+}
+
+/* Contacto */
+
+#contacto {
+    position: relative;
+    background-image: url("img/peugeot.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+#contacto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+#contacto > * {
+    position: relative;
+    z-index: 2;
+}
+
+form {
+  width: 70%;
+  margin: auto;
+}
+
+form #button {
+  background-color: var(--naranja);
+  color: var(--blanco);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    #contacto {
+        background-attachment: scroll;
+    }
+}
+
+/* Ampliación */
+
+#ampliacionProducto, #proyectos {
+  background-color: var(--blanco);
+  color: var(--gris-oscuro);
+}
+
+.carrusel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel-imagen {
+  width: 100%;
+  height: 100%;
+}
+
+.carrusel-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.volver, .imagen {
+    display: inline-block;
+    margin-bottom: 20px !important; /* o el valor que quieras */
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.303);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 20%;
+}
+
+#prev { left: 10px; }
+#next { right: 10px; }
+
+@media (max-width: 768px) {
+
+    /* Contenedor del carrusel full-width */
+    .carrusel {
+        width: 90vw;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .carrusel-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Proyectos */
+
+.proy-text {
+  width: 60%;
+  margin: auto;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-banner {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-banner img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.card-banner:hover img {
+    transform: scale(1.05);
+}
+
+.card-banner .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+
+.card-banner .title {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.card-banner .subtitle {
+    color: #e5e5e5;
+    font-size: 17px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card-banner img {
+        height: 220px;
+    }
+
+    .proy-text {
+      width: 100%;
+    }
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modalTitulo {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-label {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+/* Carrusel */
+.carousel img {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Contrato Alquiler */
+
+#contrato {
+    background-color: var(--blanco);
+    color: var(--gris-oscuro);
+}
+
+#contrato h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#contrato h6 {
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.ancho {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.ancho-button {
+    width: 40%;
+    margin: 0 auto;
+}
+
+/* ---- FORMULARIO ---- */
+form[name="pedido-box"] {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ---- FILAS DE DOS COLUMNAS ---- */
+.fila-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.fila-2 div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- INPUTS Y SELECT ---- */
+form[name="pedido-box"] input,
+form[name="pedido-box"] select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.2s ease;
+    background: #fff;
+}
+
+form[name="pedido-box"] input:focus,
+form[name="pedido-box"] select:focus {
+    border-color: var(--naranja);
+    box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+    outline: none;
+}
+
+/* ---- RADIO & CHECKBOX ---- */
+form[name="pedido-box"] input[type="radio"],
+form[name="pedido-box"] input[type="checkbox"] {
+    width: auto;
+    transform: scale(1.1);
+    margin-right: 8px;
+}
+
+.terminos-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.terminos-wrapper label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+    .fila-2 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    #contrato .button2 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    form[name="pedido-box"] input[type="radio"],
+    form[name="pedido-box"] input[type="checkbox"] {
+        transform: scale(0.9);
+        margin-right: 6px;
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--negro);
+}
+
+footer a {
+    color: var(--blanco);
+}
+
+.footer-icons a {
+    color: var(--blanco);
+    font-size: 1.6rem;
+    margin: 10px;
+    transition: opacity 0.2s ease;
+}
+
+.footer-icons a {
+    text-decoration: none !important;
+}
+
+.footer-icons a:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+    footer .d-flex {
+        flex-direction: column !important;
+        justify-content: center !important;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    footer .navbar-brand img {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Animaciones */
+
+.animar {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.animar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
